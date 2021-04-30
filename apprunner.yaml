@@ -8,7 +8,7 @@ build:
     - name: FOO
       value: "bar"
 run:
-  command: python application.py
+  command: gunicorn -b 0.0.0.0 application
   network:
     port: 8000
   env:
