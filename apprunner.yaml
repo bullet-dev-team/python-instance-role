@@ -1,0 +1,17 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    build:
+      - pip install -r requirements.txt
+  env:
+    - name: FOO
+      value: "bar"
+run:
+  runtime-version: 3.7.7
+  command: gunicorn -b 0.0.0.0 application
+  network:
+    port: 8000
+  env:
+    - name: NAME
+      value: value
