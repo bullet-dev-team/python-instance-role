@@ -8,7 +8,7 @@ build:
     - name: FOO
       value: "bar"
 run:
-  command: gunicorn -b 0.0.0.0 application
+  command: gunicorn -b 0.0.0.0 application --timeout=300 --log-level=debug
   network:
     port: 8000
   env:
